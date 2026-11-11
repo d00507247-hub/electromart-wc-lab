@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectroMart CCC</title>
+  <meta name="description" content="ElectroMart's cash conversion cycle, before and after its working capital changes.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>ElectroMart CCC</h1>
+    <p class="sub">Cash conversion cycle before and after the working capital changes</p>
+  </header>
+
+  <main>
+    <p id="status" class="status">Loading the statements…</p>
+
+    <section id="days-section" hidden>
+      <h2>Days</h2>
+      <table class="num">
+        <thead>
+          <tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Change</th></tr>
+        </thead>
+        <tbody id="days-body"></tbody>
+      </table>
+      <details>
+        <summary>Show the math</summary>
+        <ul id="days-math" class="math"></ul>
+      </details>
+    </section>
+
+    <section id="cash-section" hidden>
+      <h2>Cash freed by each lever</h2>
+      <p class="note">A drop in an asset frees cash. A rise in accounts payable frees cash.</p>
+      <table class="num">
+        <thead>
+          <tr><th scope="col">Lever</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Cash freed</th></tr>
+        </thead>
+        <tbody id="cash-body"></tbody>
+        <tfoot id="cash-foot"></tfoot>
+      </table>
+      <details>
+        <summary>Check it from the days</summary>
+        <p class="note">Days changed × annual COGS (or revenue) / <span id="diy"></span> should match the balance sheet change.</p>
+        <ul id="cash-math" class="math"></ul>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p id="assumptions" class="note"></p>
+    <p class="note">Figures come from data/electromart.csv and data/assumptions.csv.</p>
+  </footer>
+
+  <script src="ccc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
