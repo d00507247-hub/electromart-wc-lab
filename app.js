@@ -256,6 +256,13 @@
     setTo(dB);
   }
 
+  // Register the service worker so the app installs and works offline.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () { /* the app still works online */ });
+    });
+  }
+
   Promise.all([loadCsv('data/electromart.csv'), loadCsv('data/assumptions.csv')])
     .then(function (results) {
       render(CCC.statementsFromRows(results[0]), CCC.assumptionsFromRows(results[1]));
