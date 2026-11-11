@@ -1,0 +1,14 @@
+{
+  "name": "ElectroMart CCC",
+  "short_name": "ElectroMart",
+  "description": "ElectroMart's cash conversion cycle, before and after its working capital changes, with DIO, DSO and DPO levers.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f5",
+  "theme_color": "#1a5fb4",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
