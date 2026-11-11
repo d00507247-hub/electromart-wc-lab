@@ -92,6 +92,59 @@ ul.math {
 }
 ul.math li { margin-bottom: 6px; overflow-wrap: anywhere; }
 
+h3 { font-size: 1rem; margin: 18px 0 6px; }
+
+.presets { display: flex; gap: 10px; margin: 10px 0 14px; }
+.presets button {
+  flex: 1;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
+.presets button:active { background: var(--accent); color: var(--card); }
+
+.lever { margin-bottom: 14px; }
+.lever-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.lever-head label { font-weight: 600; }
+.lever-head input[type="number"] {
+  width: 6.5em;
+  font: inherit;
+  text-align: right;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+}
+.lever input[type="range"] { width: 100%; margin: 8px 0 0; accent-color: var(--accent); }
+
+.big {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.big strong { font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+
+dl.kv { margin: 0; display: grid; grid-template-columns: 1fr auto; }
+dl.kv dt, dl.kv dd { padding: 8px 0; border-bottom: 1px solid var(--line); margin: 0; }
+dl.kv dd {
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding-left: 10px;
+}
+.note.block { display: block; margin: 2px 0 0; font-size: 0.8rem; font-weight: normal; }
+
 .status { color: var(--muted); }
 .status.error { color: var(--bad); }
 

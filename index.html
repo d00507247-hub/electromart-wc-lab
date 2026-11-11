@@ -46,6 +46,67 @@
         <ul id="cash-math" class="math"></ul>
       </details>
     </section>
+    <section id="lever-section" hidden>
+      <h2>Levers</h2>
+      <p class="note">Move a slider or type a number of days. Revenue and COGS stay at their Before values.</p>
+
+      <div class="presets">
+        <button type="button" id="set-before">Set to Before</button>
+        <button type="button" id="set-after">Set to After</button>
+      </div>
+
+      <div class="lever">
+        <div class="lever-head">
+          <label for="dio-range">DIO (inventory days)</label>
+          <input type="number" id="dio-num" step="any" min="0" inputmode="decimal" aria-label="DIO in days">
+        </div>
+        <input type="range" id="dio-range" step="any" min="0">
+      </div>
+      <div class="lever">
+        <div class="lever-head">
+          <label for="dso-range">DSO (collection days)</label>
+          <input type="number" id="dso-num" step="any" min="0" inputmode="decimal" aria-label="DSO in days">
+        </div>
+        <input type="range" id="dso-range" step="any" min="0">
+      </div>
+      <div class="lever">
+        <div class="lever-head">
+          <label for="dpo-range">DPO (payment days)</label>
+          <input type="number" id="dpo-num" step="any" min="0" inputmode="decimal" aria-label="DPO in days">
+        </div>
+        <input type="range" id="dpo-range" step="any" min="0">
+      </div>
+
+      <div class="big">
+        <span>Cash conversion cycle</span>
+        <strong id="lever-ccc"></strong>
+        <span id="lever-ccc-change" class="note"></span>
+      </div>
+
+      <h3>Balances these days imply</h3>
+      <table class="num">
+        <thead>
+          <tr><th scope="col">Balance</th><th scope="col">Before</th><th scope="col">Lever</th><th scope="col">Cash freed</th></tr>
+        </thead>
+        <tbody id="lever-body"></tbody>
+        <tfoot id="lever-foot"></tfoot>
+      </table>
+
+      <h3>Bank line and suppliers</h3>
+      <dl class="kv">
+        <dt>Interest saved per year<span class="note block">Assumes every freed dollar pays down the bank line. The case's After balance sheet shows part of the cash was kept instead.</span></dt>
+        <dd id="lever-interest"></dd>
+        <dt>Days paid past the net-<span id="net-days"></span> due date</dt>
+        <dd id="lever-pastdue"></dd>
+        <dt>Annual cost of skipping the <span id="disc-pct"></span> discount<span class="note block">Nominal rate: d / (1 − d) × <span id="diy2"></span> / (days paid − <span id="disc-days"></span>)</span></dt>
+        <dd id="lever-disc"></dd>
+      </dl>
+
+      <details>
+        <summary>Show the math</summary>
+        <ul id="lever-math" class="math"></ul>
+      </details>
+    </section>
   </main>
 
   <footer>
